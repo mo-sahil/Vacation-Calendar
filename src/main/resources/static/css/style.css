@@ -1,0 +1,104 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    height: 100vh; /* Use 100% of the viewport height */
+}
+
+/* Make the main container a flex column that fills the body */
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Make the header and controls have a fixed height */
+header, #controls-container, #api-key-container {
+    flex-shrink: 0;
+}
+
+/* Allow the calendar area to grow and scroll internally */
+#calendar-container { /* This makes the container fill all remaining vertical space */
+    padding-bottom: 2rem; /* Adds some space at the very bottom when you scroll down */
+}
+
+
+/* Custom styles for calendar highlighting */
+.week-one-holiday {
+    background-color: #ecfdf5; /* A very light green for subtlety */
+}
+.week-multi-holiday {
+    background-color: #a7f3d0; /* A light green, now darker */
+}
+
+/* The container for each day in the calendar */
+.calendar-cell {
+    height: 6.5rem; /* ~104px, increased height */
+    width: 100%;
+    padding: 0.375rem; /* p-1.5 */
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    border-radius: 0.375rem; /* rounded-md */
+    transition: background-color 0.2s ease-in-out;
+    position: relative;
+    overflow: hidden; /* Ensures content doesn't spill out */
+}
+.calendar-cell:hover {
+    background-color: #f3f4f6; /* gray-100 on hover for feedback */
+}
+
+/* The number for the date */
+.date-number {
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500;
+    width: 1.75rem; /* w-7 */
+    height: 1.75rem; /* h-7 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px; /* rounded-full */
+    transition: all 0.2s ease-in-out;
+    color: #374151; /* gray-700 */
+    flex-shrink: 0; /* Prevents the number circle from shrinking */
+}
+
+/* Holiday-specific styles */
+.day-holiday .date-number {
+    background-color: #ef4444; /* red-500 */
+    color: white;
+    font-weight: 700;
+}
+
+.holiday-name-inline {
+    font-size: 0.75rem; /* text-xs */
+    line-height: 1.1;
+    font-weight: 500;
+    color: #ef4444; /* Matching red color for the text */
+    margin-top: 0.25rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* Clamp to 3 lines */
+}
+
+/* Adjustments for holidays within highlighted weeks */
+.week-one-holiday .day-holiday .date-number,
+.week-multi-holiday .day-holiday .date-number {
+    background-color: #dc2626; /* A darker red for better contrast on green */
+}
+
+.week-one-holiday .holiday-name-inline,
+.week-multi-holiday .holiday-name-inline {
+    color: #15803d; /* A dark green for holiday text inside green weeks */
+    font-weight: 600;
+}
+
+/* Forces all table columns to have the same width */
+.calendar-table {
+    table-layout: fixed;
+    width: 100%;
+}
