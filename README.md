@@ -3,7 +3,7 @@
 A dynamic, full-stack web application that fetches and displays public holidays from around the world, helping you plan your vacations and time off with ease. Built with a robust Spring Boot backend and a clean, responsive frontend.
 
 
-*The live application showing the monthly view for India.*
+![Monthly View](monthlyIndia.png)
 
 ---
 
@@ -26,11 +26,11 @@ A dynamic, full-stack web application that fetches and displays public holidays 
 
 ### Monthly View
 The detailed monthly view clearly shows holiday names and highlights weeks with one or more holidays.
-*(placeholder for screenshot-monthly.png)*
+*![monthly view](monthlyViewFrance.png)*
 
 ### Quarterly View
 The quarterly view provides a high-level overview, perfect for planning further ahead.
-*(placeholder for screenshot-quarterly.png)*
+*![quarterly view](quarterly.png)*
 
 ---
 
@@ -93,24 +93,3 @@ Follow these instructions to get a copy of the project up and running on your lo
     * `http://localhost:8080`
 
 You should now see the Vacation Calendar running in your browser!
-
----
-
-## 📁 Project Structure
-
-The project follows a standard Spring Boot structure:
-.
-├── src
-│   ├── main
-│   │   ├── java/com/example/vacationcalendar
-│   │   │   ├── CalendarController.java   # REST API endpoints
-│   │   │   ├── CalendarService.java      # Business logic, API calls
-│   │   │   └── VacationCalendarApplication.java # Main application
-│   │   └── resources
-│   │       ├── static
-│   │       │   ├── css/style.css         # Custom CSS
-│   │       │   └── js/script.js          # Frontend JavaScript
-│   │       │   └── index.html            # Main HTML file
-│   │       └── application.properties    # Configuration (API key)
-│   └── test
-└── pom.xml                             # Maven project configuration
